@@ -29,10 +29,35 @@
 ## Source Research 
 [Source Article](https://www.researchgate.net/publication/333538111_Hiding_data_in_images_using_steganography_techniques_with_compression_algorithms)
 
+The main development the article deals with is a research on hiding images inside images using LSB Steganography encryption.
+The researchers explain the neccesary background, and the results of the research.
+3 main algorithms are used through out the research:
+  1. Compressing the stego image using a DCT algorithm.
+  2. Encrypting the stego image.
+  3. Decoding the stego image into a cover image. using a LSB algorithms.
+
+There are 2 overall methods that are being described in the article:
+  1. Encoding the stego image into the cover image.
+  2. Decoding the stego image from the cover image.
+
+Our project is the implementation based on the described atricle.
+  
+  
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-
+1. Encode -
+   <ul>
+    <li> DCT compress the stego image</li>
+    <li> AES encrypt the stego image </li>
+    <li> LSB encode the stego image inside the cover image </li>
+  </ul>
+  
+2. Decode -
+ <ul>
+  <li> LSB decode the stego image from the cover image </li>
+  <li> AES decrypt the stego image</li>
+</ul>
 
 
 
@@ -49,17 +74,12 @@ This is an example of how to list things you need to use the software and how to
 1. Get a free API Key at [https://example.com](https://example.com)
 2. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/liorelisberg/Hiding-images-using-steganography-techniques-with-compression-algorithms
    ```
 3. Install NPM packages
    ```sh
-   npm install
+   npm install PIL, Crypto, pickle, scipy, skimage, base64, numpy
    ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
 
 
 <!-- USAGE EXAMPLES -->
