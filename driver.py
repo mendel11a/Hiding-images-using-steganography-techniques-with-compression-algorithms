@@ -55,7 +55,7 @@ if __name__ == '__main__':
         print("-> stego_image encrypted.\n")
 
         print("Displaying secret image ...")
-        filename = 'output/from-img-data.png'
+        filename = 'output/secret-from-data.png'
         save_img_data_and_open(filename, img_data)
 
     else:
