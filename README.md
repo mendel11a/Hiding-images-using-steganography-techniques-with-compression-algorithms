@@ -29,7 +29,7 @@
 ## Source Research 
 [Source Article](https://www.researchgate.net/publication/333538111_Hiding_data_in_images_using_steganography_techniques_with_compression_algorithms)
 
-The main development that the article deals with is a research on hiding images inside images using LSB Steganography encryption.
+The main development that the article deals with is a research on hiding images inside images using LSB Steganography encryption.<br/>
 The researchers explain the neccesary background, and the results of the research.
 3 main algorithms are used through out the research:
   1. Compressing the stego image using a DCT algorithm.
