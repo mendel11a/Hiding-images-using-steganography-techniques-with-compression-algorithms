@@ -34,6 +34,10 @@ def encrypt(path):
 
     # return a dictionary with the encrypted text
     cipher_text, tag = cipher_config.encrypt_and_digest(bytes(plain_text, 'utf-8'))
+    print('*' * 10)
+    # print("image data before encrypt: ", plain_text)
+    # print("image data after encrypt: ", cipher_text)
+    # print('*' * 10)
     print("stego_image encrypted")
     cipher_object = {
         'cipher_text': b64encode(cipher_text).decode('utf-8'),
@@ -42,7 +46,7 @@ def encrypt(path):
         'tag': b64encode(tag).decode('utf-8')
     }
     store_object(cipher_object)
-    return b64encode(cipher_text).decode('utf-8')
+    # return b64encode(cipher_text).decode('utf-8')
 
 
 def decrypt(cipher_text_):
