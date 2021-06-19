@@ -84,7 +84,10 @@ This is an example of how to list things you need to use the software and how to
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+![image](https://user-images.githubusercontent.com/14842875/122655977-7af66b00-d15f-11eb-8b03-fb080bc38bb4.png)
+![image](https://user-images.githubusercontent.com/14842875/122655979-7e89f200-d15f-11eb-9e0a-d3bc184a391d.png)
+![image](https://user-images.githubusercontent.com/14842875/122655987-88135a00-d15f-11eb-842f-ee7fa81dd656.png)
+
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
