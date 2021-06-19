@@ -105,11 +105,10 @@ This is an example of how to list things you need to use the software and how to
 ## Improvments
   The project contains 3 improvments (1 for each used algorithm):
   1. LSB - in the article, the researchers are discussing about injecting the data in the 8th bit of each block.<br/>
-     For security improvments, we desided to inject the data in the 6&7th bit.
-     From:
-     ![image](https://user-images.githubusercontent.com/14842875/122656699-b85df700-d165-11eb-9e8c-b13ccd106dc7.png) 
-     <br/><br/><br/>
-     To:
+     For security improvments, we desided to inject the data in the 6&7th bit.<br/>
+     From:<br/>
+     ![image](https://user-images.githubusercontent.com/14842875/122656699-b85df700-d165-11eb-9e8c-b13ccd106dc7.png) <br/><br/>
+     To:<br/>
      ![image](https://user-images.githubusercontent.com/14842875/122656702-c01d9b80-d165-11eb-8691-8a2ef3399f17.png) <br/><br/>
 
   2. DCT - in the article, the researchers mention that the described algorithm solely support .JPG image format.<br/>
