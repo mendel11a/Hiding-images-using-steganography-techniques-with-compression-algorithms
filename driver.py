@@ -1,12 +1,11 @@
 import base64
-from io import BytesIO
 
 from PIL import Image
 
 import welcome
 from dct import dct_compress
 from lsb import Encode, Decode
-from aes_test import encrypt, decrypt
+from AES import encrypt, decrypt
 
 
 def save_img_data_and_open(filename, img_data):
