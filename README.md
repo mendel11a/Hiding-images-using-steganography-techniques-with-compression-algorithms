@@ -1,12 +1,3 @@
-# Hiding-images-using-steganography-techniques-with-compression-algorithms
-
-1. download the repo
-
-2. run driver.py
-
-3. press 1 for encoding
-   press 2 for decoding
-
 <!-- PROJECT LOGO -->
   <h1 align="center">Hiding-images-using-steganography-techniques-with-compression-algorithms</h1>
 
