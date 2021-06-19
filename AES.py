@@ -1,4 +1,5 @@
 # AES 256 encryption/decryption using pycryptodome library
+
 import base64
 from io import BytesIO
 from base64 import b64encode, b64decode
@@ -70,28 +71,28 @@ def decrypt(encrypted):
     return eval(decrypted)
 
 
-if __name__ == '__main__':
-    # # # # # # # # ENCRYPTING  # # # # # # # #
-
-    # plaintext = input("message: ")
-    path = "images/secret.jpg"
-    # plaintext = get_msg("images/secret.jpg")
-
-    print("encrypting...")
-    # First let us encrypt secret message
-    encrypted = encrypt(path)
-    # print(encrypted["cipher_text"])
-    print("encrypted: ", encrypted)
-
-    # # # # # # # # DECRYPTING  # # # # # # # #
-
-    # Let us decrypt using our original key
-    print("decrypting...")
-    decrypted = bytes.decode(eval(decrypt(encrypted)))
-    # print('*' * 30)
-    # print("encrypted['cipher_text']: ", encrypted['cipher_text'])
-    print("decrypted: ", decrypted)
-    print("type decrypted: ", type(decrypted))
-
-    image = Image.open(BytesIO(base64.b64decode(decrypted)))
-    image.show()
+# if __name__ == '__main__':
+#     # # # # # # # # ENCRYPTING  # # # # # # # #
+#
+#     # plaintext = input("message: ")
+#     path = "images/secret.jpg"
+#     # plaintext = get_msg("images/secret.jpg")
+#
+#     print("encrypting...")
+#     # First let us encrypt secret message
+#     encrypted = encrypt(path)
+#     # print(encrypted["cipher_text"])
+#     print("encrypted: ", encrypted)
+#
+#     # # # # # # # # DECRYPTING  # # # # # # # #
+#
+#     # Let us decrypt using our original key
+#     print("decrypting...")
+#     decrypted = bytes.decode(eval(decrypt(encrypted)))
+#     # print('*' * 30)
+#     # print("encrypted['cipher_text']: ", encrypted['cipher_text'])
+#     print("decrypted: ", decrypted)
+#     print("type decrypted: ", type(decrypted))
+#
+#     image = Image.open(BytesIO(base64.b64decode(decrypted)))
+#     image.show()

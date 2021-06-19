@@ -2,9 +2,9 @@ import base64
 
 from PIL import Image
 
-import welcome
-from dct import dct_compress
-from lsb import Encode, Decode
+import Welcome
+from DCT import dct_compress
+from LSB import Encode, Decode
 from AES import encrypt, decrypt
 
 
@@ -17,7 +17,7 @@ def save_img_data_and_open(filename, img_data):
 
 
 if __name__ == '__main__':
-    welcome.welcome()
+    Welcome.welcome()
 
     print("Image path  = images/small.jpg")
     stego_path = 'images/secret.jpg'
