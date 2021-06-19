@@ -37,7 +37,6 @@ def encrypt(path):
     # return a dictionary with the encrypted text
     cipher_text, tag = cipher_config.encrypt_and_digest(bytes(plain_text, 'utf-8'))
     cipher_object = {
-        'cipher_text': b64encode(cipher_text).decode('utf-8'),
         'salt': b64encode(salt).decode('utf-8'),
         'nonce': b64encode(cipher_config.nonce).decode('utf-8'),
         'tag': b64encode(tag).decode('utf-8')
@@ -54,7 +53,6 @@ def decrypt(encrypted):
 
     # decode the dictionary entries from base64
     salt = b64decode(enc_dict['salt'])
-    # cipher_text = b64decode(enc_dict['cipher_text'])
     cipher_text = b64decode(encrypted)
     nonce = b64decode(enc_dict['nonce'])
     tag = b64decode(enc_dict['tag'])

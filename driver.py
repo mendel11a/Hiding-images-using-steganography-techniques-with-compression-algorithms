@@ -19,7 +19,6 @@ def save_img_data_and_open(filename, img_data):
 if __name__ == '__main__':
     Welcome.welcome()
 
-    print("Image path  = images/small.jpg")
     stego_path = 'images/secret.jpg'
     in_path = "images/test200.jpg"
     out_path = "output/cover-after-lsb.png"
