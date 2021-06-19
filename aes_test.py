@@ -16,7 +16,6 @@ def get_msg(path):
     with open(path, "rb") as image2string:
         converted_string = base64.b64encode(image2string.read())
 
-    print("image converted to string - in AES get_msg(): ", converted_string[:100])
     return str(converted_string)
 
 
@@ -36,7 +35,6 @@ def encrypt(path):
 
     # return a dictionary with the encrypted text
     cipher_text, tag = cipher_config.encrypt_and_digest(bytes(plain_text, 'utf-8'))
-    print("stego_image encrypted")
     cipher_object = {
         'cipher_text': b64encode(cipher_text).decode('utf-8'),
         'salt': b64encode(salt).decode('utf-8'),
@@ -60,12 +58,6 @@ def decrypt(encrypted):
     nonce = b64decode(enc_dict['nonce'])
     tag = b64decode(enc_dict['tag'])
 
-    print("#" * 10)
-    print("INSIDE AES decrypt")
-    print("cipher_text_ from out side: ", encrypted[:100])
-    print("cipher_text from in side: ", cipher_text[:100])
-    print("#" * 10)
-
     # generate the private key from the key and salt
     private_key = hashlib.scrypt(
         key.encode(), salt=salt, n=2 ** 14, r=8, p=1, dklen=32)
@@ -75,7 +67,6 @@ def decrypt(encrypted):
 
     # decrypt the cipher text
     decrypted = cipher.decrypt_and_verify(cipher_text, tag)
-    print("cipher_text after decryption: ", eval(decrypted)[:100])
     return eval(decrypted)
 
 

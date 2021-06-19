@@ -1,7 +1,5 @@
-import PIL.Image as Image
 from scipy.fftpack import dct, idct
 from skimage.io import imread, imsave
-import numpy as np
 
 
 # implement 2D DCT
@@ -15,7 +13,6 @@ def idct2(a):
 
 
 def dct_compress(path):
-    print("path in dct_compress :", path)
     img = imread(path)
 
     try:

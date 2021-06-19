@@ -2,6 +2,7 @@ import numpy as np
 from PIL import Image
 import base64
 from aes_test import encrypt, decrypt
+from dct import dct_compress
 
 
 def Encode(src, message, dest):
@@ -28,6 +29,7 @@ def Encode(src, message, dest):
 
     if req_pixels > total_pixels:
         print("ERROR: Need larger file size")
+        exit(1)
 
     else:
         index = 0
@@ -40,7 +42,6 @@ def Encode(src, message, dest):
         array = array.reshape(height, width, n)
         enc_img = Image.fromarray(array.astype('uint8'), img.mode)
         enc_img.save(dest)
-        print("Image Encoded Successfully")
 
 
 def Decode(src):
@@ -68,10 +69,10 @@ def Decode(src):
         else:
             message += chr(int(hidden_bits[i], 2))
     if "$t3g0" in message:
-        print("Hidden Message:", message[:-5])
         return message[:-5]
     else:
         print("No Hidden Message Found")
+        exit(1)
     return None
 
 
@@ -95,8 +96,12 @@ def Stego():
         # dest = input()
         dest = "output/after-lsb-img.png"
 
-        print("Encoding...")
         stego_src = "images/secret.jpg"
+
+        print("DCT Compressing ...")
+        stego_src = dct_compress(stego_src)
+
+        print("Encoding ...")
 
         print("*** AES encrypt on stego img (images/secret.jpg)... ***")
         img_data = encrypt(stego_src)
@@ -133,18 +138,12 @@ def Stego():
 
 
 def save_img_data_and_open(filename, img_data):
-    # try:
     print("img_data inside save_img_data_and_open: ", img_data[:100])
     with open(filename, 'wb') as f:
         f.write(base64.decodebytes(img_data))
+
     img = Image.open(filename)
     img.show()
-
-
-# except Exception as e:
-#     print(f"im function save_img_data_and_open(), inputs:\nfilename: {filename}\nimg_data: {img_data}")
-#     print("e: ", repr(e))
-#     exit(1)
 
 
 def get_msg():
