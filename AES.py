@@ -68,7 +68,6 @@ def decrypt(encrypted):
     decrypted = cipher.decrypt_and_verify(cipher_text, tag)
     return eval(decrypted)
 
-
 # if __name__ == '__main__':
 #     # # # # # # # # ENCRYPTING  # # # # # # # #
 #
@@ -83,10 +82,9 @@ def decrypt(encrypted):
 #     print("encrypted: ", encrypted)
 #
 #     # # # # # # # # DECRYPTING  # # # # # # # #
-#
 #     # Let us decrypt using our original key
 #     print("decrypting...")
-#     decrypted = bytes.decode(eval(decrypt(encrypted)))
+#     decrypted = bytes.decode(decrypt(encrypted))
 #     # print('*' * 30)
 #     # print("encrypted['cipher_text']: ", encrypted['cipher_text'])
 #     print("decrypted: ", decrypted)
