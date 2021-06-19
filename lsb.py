@@ -114,10 +114,14 @@ def Stego():
 
 
 def save_img_data_and_open(filename, img_data):
-    with open(filename, 'wb') as f:
-        f.write(base64.decodebytes(eval(img_data)))
-    img = Image.open(filename)
-    img.show()
+    try:
+        with open(filename, 'wb') as f:
+            f.write(base64.decodebytes(eval(img_data)))
+        img = Image.open(filename)
+        img.show()
+    except Exception as e:
+        print(f"im function save_img_data_and_open(), inputs:\n filename: {filename}\nimg_data: {img_data}")
+        print("e: ", e)
 
 
 def get_msg():
