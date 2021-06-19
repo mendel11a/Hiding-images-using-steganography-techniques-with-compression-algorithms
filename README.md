@@ -54,10 +54,10 @@ Our project is the implementation based on the described atricle.
   </ul>
   
 2. Decode -
- <ul>
-  <li> LSB decode the stego image from the cover image </li>
-  <li> AES decrypt the stego image</li>
-</ul>
+   <ul>
+    <li> LSB decode the stego image from the cover image </li>
+    <li> AES decrypt the stego image</li>
+  </ul>
 
 
 
