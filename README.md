@@ -145,15 +145,8 @@ Project Link: [https://github.com/liorelisberg/Hiding-images-using-steganography
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Img Shields](https://shields.io)
-* [Choose an Open Source License](https://choosealicense.com)
-* [GitHub Pages](https://pages.github.com)
-* [Animate.css](https://daneden.github.io/animate.css)
-* [Loaders.css](https://connoratherton.com/loaders)
-* [Slick Carousel](https://kenwheeler.github.io/slick)
-* [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-* [Sticky Kit](http://leafo.net/sticky-kit)
-* [JVectorMap](http://jvectormap.com)
-* [Font Awesome](https://fontawesome.com)
+* [Source Article](https://www.researchgate.net/publication/333538111_Hiding_data_in_images_using_steganography_techniques_with_compression_algorithms)
+* [DCT](https://en.wikipedia.org/wiki/Discrete_cosine_transform)
+* [LSB Encryption](https://www.degruyter.com/document/doi/10.1515/nleng-2016-0010/html)
+* [AES Encryption](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)
 
