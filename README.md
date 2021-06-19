@@ -84,10 +84,20 @@ This is an example of how to list things you need to use the software and how to
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+### The cover image:
+![test200](https://user-images.githubusercontent.com/14842875/122656557-446f1f00-d164-11eb-8bb7-b828a0f6728d.jpg) <br/><br/>
 
-![image](https://user-images.githubusercontent.com/14842875/122655977-7af66b00-d15f-11eb-8b03-fb080bc38bb4.png) <br/>
-![image](https://user-images.githubusercontent.com/14842875/122655979-7e89f200-d15f-11eb-9e0a-d3bc184a391d.png) <br/>
-![image](https://user-images.githubusercontent.com/14842875/122655987-88135a00-d15f-11eb-842f-ee7fa81dd656.png)
+### The stego image:
+![secret](https://user-images.githubusercontent.com/14842875/122656568-5650c200-d164-11eb-8913-b3fb3378afcc.jpg) <br/><br/>
+
+### Run "driver.py":
+![image](https://user-images.githubusercontent.com/14842875/122655977-7af66b00-d15f-11eb-8b03-fb080bc38bb4.png) <br/><br/>
+
+### For encoding -  press 1 + enter:
+![image](https://user-images.githubusercontent.com/14842875/122655979-7e89f200-d15f-11eb-9e0a-d3bc184a391d.png) <br/><br/>
+
+### For decoding -  press 2 + enter:
+![image](https://user-images.githubusercontent.com/14842875/122655987-88135a00-d15f-11eb-842f-ee7fa81dd656.png) <br/><br/>
 
 
 
