@@ -19,6 +19,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#improvments">Improvments</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -100,6 +101,26 @@ This is an example of how to list things you need to use the software and how to
 ![image](https://user-images.githubusercontent.com/14842875/122655987-88135a00-d15f-11eb-842f-ee7fa81dd656.png) <br/><br/>
 
 
+<!-- IMPROVMENTS -->
+## Improvments
+  The project contains 3 improvments (1 for each used algorithm):
+  1. LSB - in the article, the researchers are discussing about injecting the data in the 8th bit of each block.<br/>
+     For security improvments, we desided to inject the data in the 6&7th bit.
+     From:
+     ![image](https://user-images.githubusercontent.com/14842875/122656699-b85df700-d165-11eb-9e8c-b13ccd106dc7.png)<br/><br/>
+     To:
+     ![image](https://user-images.githubusercontent.com/14842875/122656702-c01d9b80-d165-11eb-8691-8a2ef3399f17.png)<br/><br/>
+
+  2. DCT - in the article, the researchers mention that the described algorithm solely support .JPG image format.<br/>
+     For diversity improvments, we desided to support few other formats.<br/>
+     after some research, we found that the DCT can support (and improve) the outcome of the following formats  - {jpg, jfif, jp2, bmp}<br/><br/>
+     ![image](https://user-images.githubusercontent.com/14842875/122656862-18a16880-d167-11eb-8649-81dec3484cb2.png)
+
+  3. AES - in the article, there's no implemention or mentioning of any cryptographic algorithm that has been used in the article.
+     The researchers talk about it abstractly.
+     we decided to implement a modern & well documented crypto algorithm.
+     After some research, we found out that there are few popular algorithms, such as: DES, RSA, BLOWFISH, AES. 
+     Due to great documantation and online examples, as well as great results, we decided to implement the AES algorithms.
 
 <!-- CONTRIBUTING -->
 ## Contributing
