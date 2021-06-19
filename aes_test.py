@@ -15,6 +15,8 @@ from cipher_object import store_object, load_object
 def get_msg(path):
     with open(path, "rb") as image2string:
         converted_string = base64.b64encode(image2string.read())
+
+    print("image converted to string - in AES get_msg(): ", converted_string[:100])
     return str(converted_string)
 
 
@@ -34,10 +36,6 @@ def encrypt(path):
 
     # return a dictionary with the encrypted text
     cipher_text, tag = cipher_config.encrypt_and_digest(bytes(plain_text, 'utf-8'))
-    print('*' * 10)
-    # print("image data before encrypt: ", plain_text)
-    # print("image data after encrypt: ", cipher_text)
-    # print('*' * 10)
     print("stego_image encrypted")
     cipher_object = {
         'cipher_text': b64encode(cipher_text).decode('utf-8'),
@@ -46,17 +44,27 @@ def encrypt(path):
         'tag': b64encode(tag).decode('utf-8')
     }
     store_object(cipher_object)
-    # return b64encode(cipher_text).decode('utf-8')
+
+    encrypted = b64encode(cipher_text).decode('utf-8')
+    return encrypted
 
 
-def decrypt(cipher_text_):
+def decrypt(encrypted):
     key = load_key()
     enc_dict = load_object()
+
     # decode the dictionary entries from base64
     salt = b64decode(enc_dict['salt'])
-    cipher_text = b64decode(enc_dict['cipher_text'])
+    # cipher_text = b64decode(enc_dict['cipher_text'])
+    cipher_text = b64decode(encrypted)
     nonce = b64decode(enc_dict['nonce'])
     tag = b64decode(enc_dict['tag'])
+
+    print("#" * 10)
+    print("INSIDE AES decrypt")
+    print("cipher_text_ from out side: ", encrypted[:100])
+    print("cipher_text from in side: ", cipher_text[:100])
+    print("#" * 10)
 
     # generate the private key from the key and salt
     private_key = hashlib.scrypt(
@@ -67,8 +75,8 @@ def decrypt(cipher_text_):
 
     # decrypt the cipher text
     decrypted = cipher.decrypt_and_verify(cipher_text, tag)
-
-    return decrypted
+    print("cipher_text after decryption: ", eval(decrypted)[:100])
+    return eval(decrypted)
 
 
 if __name__ == '__main__':

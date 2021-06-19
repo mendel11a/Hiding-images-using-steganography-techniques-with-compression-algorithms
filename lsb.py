@@ -1,6 +1,7 @@
 import numpy as np
 from PIL import Image
 import base64
+from aes_test import encrypt, decrypt
 
 
 def Encode(src, message, dest):
@@ -13,11 +14,12 @@ def Encode(src, message, dest):
 
     width, height = img.size
     array = np.array(list(img.getdata()))
-
     if img.mode == 'RGB':
         n = 3
     elif img.mode == 'RGBA':
         n = 4
+    else:
+        raise ValueError
     total_pixels = array.size // n
 
     message += "$t3g0"
@@ -44,11 +46,12 @@ def Encode(src, message, dest):
 def Decode(src):
     img = Image.open(src, 'r')
     array = np.array(list(img.getdata()))
-
     if img.mode == 'RGB':
         n = 3
     elif img.mode == 'RGBA':
         n = 4
+    else:
+        raise ValueError
     total_pixels = array.size // n
 
     hidden_bits = ""
@@ -82,28 +85,44 @@ def Stego():
     if func == '1':
         print("Enter Source Image Path")
         # src = input()
-        src = "images/test200.jpg"
+        cover_src = "images/test200.jpg"
 
         print("Enter Message to Hide")
         # message = input()
-        message = get_msg()
+        # message = get_msg()
 
         print("Enter Destination Image Path")
         # dest = input()
         dest = "output/after-lsb-img.png"
 
         print("Encoding...")
-        Encode(src, message, dest)
+        stego_src = "images/secret.jpg"
+
+        print("*** AES encrypt on stego img (images/secret.jpg)... ***")
+        img_data = encrypt(stego_src)
+        print("img_data from AES: ", img_data[:100])
+        print("type img_data: ", type(img_data))
+
+        print("*** LSB encode *** ")
+        Encode(cover_src, img_data, dest)
 
     elif func == '2':
         print("Enter Source Image Path")
         # src = input()
-        src = "output/after-lsb-img.png"
+        cover_src = "output/after-lsb-img.png"
 
         print("Decoding...")
-        img_data = Decode(src)
 
-        print("img_data: ", img_data)
+        print("*** LSB decode *** ")
+        img_data = Decode(cover_src)
+
+        print("img_data from LSB Decode: ", img_data[:100])
+        print("type img_data: ", type(img_data))
+
+        print("*** AES decrypt on stego img (images/secret.jpg)... ***")
+        img_data = decrypt(img_data)
+
+        print("img_data: ", img_data[:100])
         print("type img_data: ", type(img_data))
 
         filename = 'output/from-img-data.png'
@@ -114,14 +133,18 @@ def Stego():
 
 
 def save_img_data_and_open(filename, img_data):
-    try:
-        with open(filename, 'wb') as f:
-            f.write(base64.decodebytes(eval(img_data)))
-        img = Image.open(filename)
-        img.show()
-    except Exception as e:
-        print(f"im function save_img_data_and_open(), inputs:\n filename: {filename}\nimg_data: {img_data}")
-        print("e: ", e)
+    # try:
+    print("img_data inside save_img_data_and_open: ", img_data[:100])
+    with open(filename, 'wb') as f:
+        f.write(base64.decodebytes(img_data))
+    img = Image.open(filename)
+    img.show()
+
+
+# except Exception as e:
+#     print(f"im function save_img_data_and_open(), inputs:\nfilename: {filename}\nimg_data: {img_data}")
+#     print("e: ", repr(e))
+#     exit(1)
 
 
 def get_msg():
