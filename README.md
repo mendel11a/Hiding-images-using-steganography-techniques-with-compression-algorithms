@@ -1,6 +1,6 @@
 # Hiding-images-using-steganography-techniques-with-compression-algorithms
 
-1. download the rep
+1. download the repo
 
 2. run driver.py
 
