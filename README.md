@@ -138,6 +138,7 @@ Contributions are what make the open source community such an amazing place to b
 ## Contact
 
 Lior Elisberg - LiorElisberg@gmail.com
+Mendel Amar - mendlamar11@gmail.com
 
 Project Link: [https://github.com/liorelisberg/Hiding-images-using-steganography-techniques-with-compression-algorithms](https://github.com/liorelisberg/Hiding-images-using-steganography-techniques-with-compression-algorithms)
 
